@@ -14,8 +14,7 @@ struct ContentView: View {
   
   var body: some View {
     ZStack {
-      Color("BackgroundColor")
-        .ignoresSafeArea()
+      BackgroundView(game: $game)
       VStack {
         InstructionsView(game: $game)
         SliderView(sliderValue: $sliderValue)
@@ -46,12 +45,14 @@ struct SliderView: View {
         .foregroundColor(Color("DefaultTextColor"))
         .bold()
         .font(.body)
+        .frame(width: 35)
       Slider(value: $sliderValue, in: 1.0...100.0)
         .padding(.horizontal, 10.0)
       Text("100")
         .foregroundColor(Color("DefaultTextColor"))
         .bold()
         .font(.body)
+        .frame(width: 35)
     }
     .padding(.horizontal, 10.0)
   }

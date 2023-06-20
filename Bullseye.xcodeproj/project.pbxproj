@@ -15,6 +15,8 @@
 		0585B8BC2A3F649600674D5E /* BullseyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585B8BB2A3F649600674D5E /* BullseyeTests.swift */; };
 		0585B8C32A3FC7DC00674D5E /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585B8C22A3FC7DC00674D5E /* TextViews.swift */; };
 		0585B8C52A3FD6E200674D5E /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585B8C42A3FD6E200674D5E /* Shapes.swift */; };
+		05C45B472A41E91800FF0C94 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C45B462A41E91800FF0C94 /* RoundedViews.swift */; };
+		05C45B492A41F7EB00FF0C94 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C45B482A41F7EB00FF0C94 /* BackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		0585B8BB2A3F649600674D5E /* BullseyeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullseyeTests.swift; sourceTree = "<group>"; };
 		0585B8C22A3FC7DC00674D5E /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 		0585B8C42A3FD6E200674D5E /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		05C45B462A41E91800FF0C94 /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
+		05C45B482A41F7EB00FF0C94 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				0585B8A22A3F319D00674D5E /* ContentView.swift */,
 				0585B8C22A3FC7DC00674D5E /* TextViews.swift */,
 				0585B8C42A3FD6E200674D5E /* Shapes.swift */,
+				05C45B462A41E91800FF0C94 /* RoundedViews.swift */,
+				05C45B482A41F7EB00FF0C94 /* BackgroundView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,8 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C45B472A41E91800FF0C94 /* RoundedViews.swift in Sources */,
 				0585B8A32A3F319D00674D5E /* ContentView.swift in Sources */,
 				0585B8C32A3FC7DC00674D5E /* TextViews.swift in Sources */,
+				05C45B492A41F7EB00FF0C94 /* BackgroundView.swift in Sources */,
 				0585B8C52A3FD6E200674D5E /* Shapes.swift in Sources */,
 				0585B8B42A3F5C9700674D5E /* Game.swift in Sources */,
 				0585B8A12A3F319D00674D5E /* BullseyeApp.swift in Sources */,

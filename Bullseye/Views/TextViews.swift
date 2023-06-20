@@ -34,9 +34,25 @@ struct BigNumberText: View {
   }
 }
 
+struct LabelTextView: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .kerning(1.5)
+            .font(.caption)
+            .bold()
+            .foregroundColor(Color("DefaultTextColor"))
+    }
+}
+
 struct TextViews_Previews: PreviewProvider {
   static var previews: some View {
-    InstructionTextView(text: "Instructions")
-    BigNumberText(text: "999")
+      
+      VStack(spacing: 10) {
+          InstructionTextView(text: "Instructions")
+          BigNumberText(text: "BigNum")
+          LabelTextView(text: "Label Text")
+      }
   }
 }

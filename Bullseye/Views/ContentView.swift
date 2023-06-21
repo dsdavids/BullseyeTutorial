@@ -86,7 +86,7 @@ struct HitMeButton: View {
       "Hello There",
       isPresented: $alertIsVisible,
       actions: { Button("Yippee") {
-        print("alert closed")
+        game.startNewRound(points: game.points(sliderValue: Int(sliderValue)))
       }
       },
       message: {

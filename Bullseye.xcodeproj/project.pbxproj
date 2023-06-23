@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		056D59302A45E5A100740E99 /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D592F2A45E5A100740E99 /* PointsView.swift */; };
+		056D59322A460C5800740E99 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D59312A460C5800740E99 /* Constants.swift */; };
 		0585B8A12A3F319D00674D5E /* BullseyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585B8A02A3F319D00674D5E /* BullseyeApp.swift */; };
 		0585B8A32A3F319D00674D5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585B8A22A3F319D00674D5E /* ContentView.swift */; };
 		0585B8A52A3F319E00674D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0585B8A42A3F319E00674D5E /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		056D592F2A45E5A100740E99 /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
+		056D59312A460C5800740E99 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0585B89D2A3F319D00674D5E /* Bullseye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bullseye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0585B8A02A3F319D00674D5E /* BullseyeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullseyeApp.swift; sourceTree = "<group>"; };
 		0585B8A22A3F319D00674D5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				0585B8B32A3F5C9700674D5E /* Game.swift */,
+				056D59312A460C5800740E99 /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				0585B8C52A3FD6E200674D5E /* Shapes.swift in Sources */,
 				0585B8B42A3F5C9700674D5E /* Game.swift in Sources */,
 				0585B8A12A3F319D00674D5E /* BullseyeApp.swift in Sources */,
+				056D59322A460C5800740E99 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

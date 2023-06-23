@@ -17,10 +17,18 @@ struct ContentView: View {
       BackgroundView(game: $game)
       VStack {
         InstructionsView(game: $game)
-          .padding(.bottom, 100)
-        HitMeButton(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+          .padding(.bottom, alertIsVisible ? 0 :100)
+        if alertIsVisible {
+          PointsView(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+        } else {
+          HitMeButton(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+        }
       }
-      SliderView(sliderValue: $sliderValue)
+      if !alertIsVisible {
+        SliderView(sliderValue: $sliderValue)
+          .zIndex(1)
+          .transition(.scale)
+      }
     }
   }
 }
@@ -66,7 +74,9 @@ struct HitMeButton: View {
   
   var body: some View {
     Button("HIT ME") {
-      alertIsVisible = true
+      withAnimation {
+        alertIsVisible = true
+      }
     }
     .padding(20.0)
     .background(
@@ -76,34 +86,21 @@ struct HitMeButton: View {
       }
     )
     .overlay(
-      RoundedRectangle(cornerRadius: 21.0)
-        .strokeBorder(Color.white, lineWidth: 2.0)
+      RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
+        .strokeBorder(Color.white, lineWidth: Constants.General.strokeWidth)
     )
     .foregroundColor(.white)
-    .cornerRadius(21.0)
+    .cornerRadius(Constants.General.roundRectCornerRadius)
     .bold()
     .font(.title3)
-    .alert(
-      "Hello There",
-      isPresented: $alertIsVisible,
-      actions: { Button("Yippee") {
-        game.startNewRound(points: game.points(sliderValue: Int(sliderValue)))
-      }
-      },
-      message: {
-        let roundedValue = Int(sliderValue.rounded())
-        Text("""
-        The slider value is \(roundedValue)
-        You scored \(game.points(sliderValue: roundedValue)) in this round
-        Your total score is \(self.game.score)
-      """)
-      }
-    )
   }
 }
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+    ContentView()
+      .previewInterfaceOrientation(.landscapeRight)
+      .preferredColorScheme(.dark)
   }
 }

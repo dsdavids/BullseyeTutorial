@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BackgroundView: View {
   @Binding var game: Game
+  
   var body: some View {
     VStack {
       TopView(game: $game)
@@ -24,6 +25,8 @@ struct BackgroundView: View {
 
 struct TopView: View {
   @Binding var game: Game
+  @State private var leaderboardIsShowing = false
+  
   var body: some View {
     HStack {
       Button {
@@ -32,7 +35,15 @@ struct TopView: View {
         RoundedImageViewStroked(systemName: "arrow.counterclockwise")
       }
       Spacer()
-      RoundedImageViewFilled(systemName: "list.dash")
+      Button {
+        // Show Leaderboard
+        leaderboardIsShowing = true
+      } label: {
+        RoundedImageViewFilled(systemName: "list.dash")
+      }
+      .sheet(isPresented: $leaderboardIsShowing) {
+        LeaderboardView(leaderboardIsShowing: $leaderboardIsShowing)
+      }
     }
   }
 }

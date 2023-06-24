@@ -127,7 +127,17 @@ struct DateTextView: View {
   }
 }
 
-
+struct BigBoldTextView: View {
+  var text: String
+  
+  var body: some View {
+    Text(text.uppercased())
+      .kerning(2.0)
+      .font(.title)
+      .fontWeight(.black)
+      .foregroundColor(Color("DefaultTextColor"))
+  }
+}
 
 struct TextViews_Previews: PreviewProvider {
   static var previews: some View {
@@ -141,6 +151,7 @@ struct TextViews_Previews: PreviewProvider {
       RoundedTextView(text: "4")
       ScoreTextView(score: 149)
       DateTextView(date: Date())
+      BigBoldTextView(text: "Big Bold Text")
     }
     .padding()
   }

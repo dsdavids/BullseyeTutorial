@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LeaderboardView: View {
   @Binding var leaderboardIsShowing: Bool
+  @Binding var game: Game
   
   var body: some View {
     ZStack {
@@ -17,7 +18,7 @@ struct LeaderboardView: View {
       VStack(spacing: 10) {
         HeaderView(leaderboardIsShowing: $leaderboardIsShowing)
         LabelView()
-        RowView(index: 1, score: 10, date: Date())
+        TableView(game: $game)
       }
     }
   }
@@ -45,7 +46,22 @@ struct HeaderView: View {
         }
       }
     }
-    .padding(.horizontal)
+    .padding([.horizontal, .top])
+  }
+}
+
+struct TableView: View {
+  @Binding var game: Game
+  
+  var body: some View {
+    ScrollView {
+      VStack {
+        ForEach(game.leaderboardEntries.indices, id: \.self) { index in
+          let entry = game.leaderboardEntries[index]
+          RowView(index: index + 1, score: entry.score, date: entry.date)
+        }
+      }
+    }
   }
 }
 
@@ -92,10 +108,11 @@ struct RowView: View {
 
 struct LeaderboardView_Previews: PreviewProvider {
   static  private var leaderboardIsShowing = Binding.constant(false)
+  static private var game = Binding.constant(Game(loadTestData: true))
   
   static var previews: some View {
-    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing)
-    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing)
+    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game)
+    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game)
       .previewInterfaceOrientation(.landscapeRight)
       .preferredColorScheme(.dark)
   }

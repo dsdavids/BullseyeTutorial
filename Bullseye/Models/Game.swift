@@ -13,6 +13,16 @@ struct Game {
   var round = 1
   var leaderboardEntries: [LeaderboardEntry] = []
   
+  init(loadTestData: Bool = false) {
+    if loadTestData {
+      addLeaderboardEntry(score: 100, date: Date())
+      addLeaderboardEntry(score: 80, date: Date())
+      addLeaderboardEntry(score: 200, date: Date())
+      addLeaderboardEntry(score: 150, date: Date())
+      addLeaderboardEntry(score: 20, date: Date())
+    }
+  }
+  
   
 func points(sliderValue:Int) -> Int {
     let bonusForExact: Int = 100
